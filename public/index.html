@@ -1,0 +1,46 @@
+  <!DOCTYPE html>
+  <html lang="en">
+
+  <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+      <title>HOME</title>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>    <link rel="stylesheet" href="http://localhost:9000/style.css">
+      <link rel="stylesheet" href="http://localhost:9000/style.css">
+
+      <script src="http://localhost:9000/client.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+
+  </head>
+
+  <body class="main-outer">
+
+        <h1 class="welcome">Sharez Hub</h1>
+        <form id="stockers" action="/stocks" method="get">
+            <div>
+                <label class="form-title" for="stock_finder">Find:</label>
+                <input class="input-wide" type="text" id="stock_finder" name="stock_finder"></input>
+            </div>
+        <input type="submit" value="Submit" class="form-button"></input>
+        </form>
+
+        <form id="transactions" action="/transaction/buy" method="post">
+            <div>
+                <label class="form-title"  for="transaction_finder">Buy:</label>
+                <input class="input-wide" type="text" id="transaction_finder_id" name="transaction_finder"></input>
+            </div>
+            <input type="submit" value="Submit" class="form-button"></input>
+        </form>
+
+        <form id="transactions" action="/transaction/sell" method="post">
+            <div>
+                <label class="form-title"  for="transaction_finder">Sell:</label>
+                <input class="input-wide" type="text" id="transaction_finder_id" name="transaction_finder"></input>
+            </div>
+            <input type="submit" value="Submit" class="form-button"></input>
+        </form>
+      <!-- <script src="sketch.js"></script> -->
+  </body>
+
+  </html>
