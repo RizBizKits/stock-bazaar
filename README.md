@@ -1,1 +1,1 @@
-# bazaar
+# Stock Bazaar
