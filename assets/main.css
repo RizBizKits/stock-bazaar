@@ -1,0 +1,12 @@
+* {
+    border: solid 10px red;
+    background-color: rebeccapurple;
+}
+
+body {
+    color: pink;
+}
+
+.single-article {
+    border: solid 10px black;
+}

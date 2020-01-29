@@ -32,7 +32,7 @@ app.set('view engine', 'ejs');
 
 
 // Connect to Mongoose and set connection variable
-mongoose.connect('mongodb://localhost/resthub', { useNewUrlParser: true});
+mongoose.connect('mongodb://localhost/bazaardb', { useNewUrlParser: true});
 var db = mongoose.connection;
 
 // Added check for DB connection
@@ -75,12 +75,16 @@ app.get('/findStock', async (req, res) => {
     });
 
     console.log(fdata);
+
+
+
     // res.json(fdata);
-    res.render("shares", { 'shares': JSON.stringify(fdata)});
+    res.render("shares", { 'shares': fdata});
 });
 
-app.use(express.static('public'));
+// app.use(express.static('public'));
 
+app.use(express.static(__dirname + '/assets'));
 
 // Use Api routes in the App
 app.use('/api', apiRoutes);
