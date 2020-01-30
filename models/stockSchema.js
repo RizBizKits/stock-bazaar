@@ -18,8 +18,44 @@ var stockSchema = new mongoose.Schema({
     price: {
         type: String
     },
-    tradingDate: {
+    latest_trading_day: {
         type: Date
+    },
+    open: {
+        type: String
+    },
+    high: {
+        type: String
+    },
+    low: {
+        type: String
+    },
+    previous_close: {
+        type: String
+    },
+    change: {
+        type: String
+    },
+    change_percent: {
+        type: String
+    },
+    type: {
+        type: String
+    },
+    region: {
+        type: String
+    },
+    marketOpen: {
+        type: String
+    },
+    marketClose: {
+        type: String
+    },
+    timezone: {
+        type: String
+    },
+    matchScore: {
+        type: String
     }
 })
 

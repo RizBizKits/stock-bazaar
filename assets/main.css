@@ -1,12 +1,51 @@
-* {
+/* * {
     border: solid 10px red;
     background-color: rebeccapurple;
-}
+} */
 
 body {
-    color: pink;
+    background-color: lightblue;
+    /* max-width: 1200px; */
+    font-family: Arial, Helvetica, sans-serif;
 }
 
-.single-article {
-    border: solid 10px black;
+.stock-outer {
+    /* border: solid 5px darkblue; */
+    font-size: 40px;
+    width: 1200px;
+    margin: 0 auto;
+    /* border: solid 10px black; */
+}
+
+/* .stock__invest--outer {
+    font-size: 40px;
+    width: 1200px;
+    margin: 0 auto;
+} */
+
+.stock-inner  {
+    padding: 100px 100px 0px;
+}
+
+.stock__invest--outer {
+    padding: 100px 100px 0px;
+}
+
+.stock__field {
+    margin: 20px 0;
+}
+.stock__brow {
+    font-style: italic;
+    font-size: 26px;
+    margin: 0;
+}
+
+.stocker__subheading {
+    margin: 0 0 5px;
+}
+
+#buy-share {
+    width: 100%;
+    padding: 12px 20px;
+ 
 }

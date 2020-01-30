@@ -27,7 +27,7 @@ exports.new = function (req, res) {
     stock.currency = req.body.currency;
     stock.price = req.body.price;
     stock.tradingDate = req.body.tradingDate;
-// save the stock and check for errors
+    // save the stock and check for errors
     stock.save(function (err) {
         // if (err)
         //     res.json(err);
@@ -86,3 +86,37 @@ exports.delete = function (req, res) {
         });
     });
 };
+
+
+exports.update_vol = async (req, res) => {
+
+    Stocks.findOne({'symbol': req.body.companySymb }, async (err, result) => {
+
+        if (err)
+            res.send(err);
+
+
+        console.log("old -> " + result.volume);
+
+        if (req.body.volume <= result.volume ){
+            result.volume = parseFloat(result.volume) + parseFloat(req.body.volume);
+        } else {
+            res.status(400).end();
+        }
+
+
+        console.log("new -> " + result.volume);
+
+        var stockInstance = new Stocks(result);
+
+        stockInstance.save(function (err) {
+            if (err)
+                res.json(err);
+            res.json({
+                message: 'Stock Info updated',
+                data: result
+            });
+        });
+
+    });
+}
