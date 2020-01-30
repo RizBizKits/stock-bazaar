@@ -27,6 +27,10 @@ router.route('/stocks/:stock_id')
 router.route('/updated')
     .patch(stockController.update_vol);
 
+router.route('/share/:mongo_id')
+    .delete(shareController.del_share);
+
+
 router.route('/share/test')
     .post(shareController.add_new_share)
     .get(shareController.view_all_shares); 

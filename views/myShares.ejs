@@ -27,13 +27,41 @@
                     <p class="stock__brow">OWNER</p>
                     <%= data[i].belongsTo %>
                 </div>
-            <% } %>
 
+                <button type="button" data-mongo-id="<%= data[i]._id %>" id="mongo-link" >Sell</button>
+            <% } %>
 		</div>
 	</div>
 
 	<a class="btn btn-primary" role="button" href="http://localhost:8000">Home page</a> 
 </body>
+
+<script>
+
+    $( document ).ready(function() {
+
+        $("button").click(function() {
+           unik = this.id; // or alert($(this).attr('id'));
+            $.ajax({
+                type: "DELETE",
+                url: "share/" + $("#mongo-link").attr('data-mongo-id'),
+                success : function( data) {
+                    console.log('success');
+                },
+                error : function() {
+                    console.log('error');
+                }
+
+            });
+
+
+
+        });
+    });
+
+
+</script>
+
  </html>
 
 

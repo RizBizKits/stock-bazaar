@@ -94,75 +94,10 @@ app.get('/shares', async (req, res) => {
 });
 
 
-// app.get('/api/updated', async (req, res) => {
-//     console.log(res.body);
-//     res.render("suc", { 'shares': res});
-// });
-
-// app.patch('/updated', async (req, res) => {
-
-//     // console.log(req.body);
-
-//     stockDB.findOne({'symbol': req.body.companySymb }, async (err, result) => {
-
-//         if (err)
-//             res.send(err);
-
-
-//         console.log("old -> " + result.volume);
-
-//         if (req.body.volume <= result.volume ){
-//             // let diff = result.volume - req.body.volume;
-//             result.volume = parseFloat(result.volume) + parseFloat(req.body.volume);
-//         } else {
-//             res.status(400).end();
-//         }
-
-//         console.log("new -> " + result.volume);
-
-//         var stockInstance = new stockDB(result);
-
-//         stockInstance.save(function (err) {
-//             if (err)
-//                 res.json(err);
-            
-//             res.render("myShares");
-
-//             res.json({
-//                 message: 'Stock Info updated',
-//                 data: result
-//             });
-//         });
-
-        
-//     });
-// });
-
-
 
 // app.use(express.static('public'));
 
 app.use(express.static(__dirname + '/assets'));
-
-
-// app.post('/addStock', async (req, res) => { 
-//     userShare.create(req.body).then(function(usershare){
-//         res.send(usershare);
-//     });
-// });
-
-
-// app.post('/share/test', async (req, res) => { 
-    
-//     shareDB.create(req.body).then(function(shareitem){
-//         res.send(shareitem);
-//         console.log(shareitem);
-//     });
-
-//     console.log(req.body);
-
-//     res.json(req.body);
-// });
 
 
 // Use Api routes in the App

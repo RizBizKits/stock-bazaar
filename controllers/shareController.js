@@ -55,3 +55,20 @@ exports.buy_share = function (req, res) {
         });
     });
 };
+
+// Handle update contact info
+exports.del_share = function (req, res) {
+    Shares.deleteOne({
+        _id: req.params.mongo_id
+    }, function (err, stock) {
+        if (err)
+            res.send(err);
+        var response = {
+            message: "task successfully deleted",
+            id: req.mongo_id
+        };
+        res.send(response);
+
+    });
+};
+
