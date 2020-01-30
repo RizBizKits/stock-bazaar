@@ -89,6 +89,16 @@ app.get('/findStock', async (req, res) => {
     });
 });
 
+app.get('/shares', async (req, res) => {
+    res.render("myShares", { 'shares': res});
+});
+
+
+// app.get('/api/updated', async (req, res) => {
+//     console.log(res.body);
+//     res.render("suc", { 'shares': res});
+// });
+
 // app.patch('/updated', async (req, res) => {
 
 //     // console.log(req.body);

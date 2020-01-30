@@ -28,8 +28,11 @@ router.route('/updated')
     .patch(stockController.update_vol);
 
 router.route('/share/test')
-    .post(shareController.add_new_share);
-    // .get(shareController.view_all_shares); 
+    .post(shareController.add_new_share)
+    .get(shareController.view_all_shares); 
+
+
+router.route('/shares').get(shareController.view_all_shares);   
 
 // Export API routes
 module.exports = router;

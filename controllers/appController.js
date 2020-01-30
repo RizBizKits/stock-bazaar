@@ -109,6 +109,8 @@ exports.update_vol = async (req, res) => {
 
         var stockInstance = new Stocks(result);
 
+        // console.log(JSON.stringify(stockInstance));
+
         stockInstance.save(function (err) {
             if (err)
                 res.json(err);

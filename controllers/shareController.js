@@ -27,11 +27,13 @@ exports.view_all_shares = function (req, res) {
                 message: err,
             });
         }
-        res.json({
-            status: "success",
-            message: "Contacts retrieved successfully",
-            data: shares
-        });
+
+        res.render("myShares", { 'data': shares});
+        // res.json({
+        //     status: "success",
+        //     message: "Contacts retrieved successfully",
+        //     data: shares
+        // });
     });
 };
 

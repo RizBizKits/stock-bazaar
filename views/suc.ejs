@@ -13,26 +13,23 @@
 <body>
 	<div class="stock-outer">
 		<div class="stock-inner">
-            <% for(var i = 0; i < data.length; i++) { %>
+            <% for(var i = 0; i < shares.length; i++) { %>
 
                 <h3 class="stocker__title">
-                    <%= data[i].companyName %>
+                    <%= shares[i].name %>
                 </h3>
 
                 <div class="stock__field stock__symbol">
                     <p class="stock__brow">VOLUME</p>
-                    <%= data[i].amount %>
+                    <%= shares[i].symbol %>
                 </div>
-                <div class="stock__field stock__volume">
-                    <p class="stock__brow">OWNER</p>
-                    <%= data[i].belongsTo %>
-                </div>
+     
             <% } %>
 
 		</div>
 	</div>
 
-	<a class="btn btn-primary" role="button" href="http://localhost:8000">Home page</a> 
+    <a class=”btn btn-primary” role=”button” href=”/..”>Home page</a> 
 </body>
  </html>
 

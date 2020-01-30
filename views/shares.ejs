@@ -2,7 +2,6 @@
 <html>
 
 <head>
-	<title>Node.js with MongoDB(mLab)</title>
 	<link rel="stylesheet" href="main.css" />
 
 	<!-- <link rel=”stylesheet” type=”text/css” href=”//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css” /> -->
@@ -44,14 +43,18 @@
 
 		<div class="stock__invest--outer">
 			<h5 class="stock__title">INVEST</h5>
+			<p>Please enter the quantity of shares you want to purchase</p>
 			<input type="number" id="buy-share" name="shareVol" min="1" max="<%= shares.volume %>">
-			<button id="invest-btn" onclick="buyStock(); updateStock();">Button</button>
+			<button type="button" id="invest-btn" onclick="buyStock(); updateStock();">Purchase</button>
 		</div>
 
 		</div>
 	</div>
 
-	<a class=”btn btn-primary” role=”button” href=”/..”>Home page</a> </body> </html>
+	<a class="btn btn-primary" role="button" href="http://localhost:8000">Home page</a> 
+	</body> 
+
+	</html>
 
 	<script>
 
@@ -72,25 +75,35 @@
 			$.ajax({
 				type: "POST",
 				url: "api/share/test",
-				dataType: 'text',
+				dataType: 'json',
+				processData: true,
+
 				data: { 
 					belongsTo: user, // < note use of 'this' here
 					companyName: "<%= shares.name %>",
 					amount: shareVolume
 				},
 
-				success: function (data) {
-					try {
-						var output = JSON.parse(data);
-						alert(data);
-					} catch (e) {
-						alert("Output is not valid JSON: " + data);
-					}
-				}, error: function (request, error) {
-					alert("AJJJAX Call Error: " + error);
-				}
+				success:function(response) {
 
-			});
+					// if(response){
+					// 	location.window.href = "http://google.com";
+					// }
+				}
+			}); 
+			
+				// success: function (data) {
+					
+				// 	// try {
+				// 		// var output = JSON.parse(data);
+					
+				// 	// 	alert(output);
+				// 	// } catch (e) {
+				// 	// 	alert("OOutput is not valid JSON: " + data);
+				// 	// }
+				// }, error: function (request, error) {
+				// 	alert("AJJJAX Call Error: " + error);
+				// }
 		}
 
 		function updateStock() {
@@ -116,9 +129,9 @@
 				},
 
 				success: function (data) {
-					var output = JSON.parse(data);
-
-					alert(data);
+					// var output = JSON.parse(data);
+					window.location.href = "http://localhost:8000/bought.html";
+					// alert(data);
 					// try {
 					// 	var output = JSON.parse(data);
 					// 	alert(output);

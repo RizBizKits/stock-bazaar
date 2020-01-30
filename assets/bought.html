@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>BOUGHT</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="main.css">
+    <script src="http://localhost:9000/client.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+
+</head>
+
+<body class="success-outer">
+    <h1 class="header-title">You have bought a share.</h1>
+    <a class="home-link" href="http://localhost:8000">Go Back To Home</a>
+</body>
+
+
+<script>
+    function seeShares() {
+        let shareVolume = $('[name="shareVol"]').val();
+        let user = "Khan";
+        var shareList = {
+            belongsTo: user, // < note use of 'this' here
+            companyName: "<%= shares.name %>",
+            amount: shareVolume
+        }
+        $.ajax({
+            type: "POST",
+            url: "api/share/test",
+            dataType: 'json',
+            processData: true,
+
+            data: { 
+                belongsTo: user, // < note use of 'this' here
+                companyName: "<%= shares.name %>",
+                amount: shareVolume
+            },
+
+            success:function(response) {
+            }
+        }); 
+    }
+</script>
+</html>
